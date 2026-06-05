@@ -88,22 +88,21 @@ public class TimeZoneClockManager : MonoBehaviour
         // Default time zones to display
         string[] defaultZones = new string[]
         {
-            "Pacific Standard Time",     // Los Angeles
-            "Mountain Standard Time",    // Denver
-            "Central Standard Time",     // Chicago
-            "Eastern Standard Time",     // New York
-            "GMT Standard Time",         // London
-            "Central European Standard Time", // Paris/Berlin
-            "India Standard Time",       // India
-            "China Standard Time",       // Shanghai
-            "Tokyo Standard Time",       // Tokyo
-            "Australia/Sydney"           // Sydney
+            "Pacific Standard Time",
+            "Mountain Standard Time",
+            "Central Standard Time",
+            "Eastern Standard Time",
+            "GMT Standard Time",
+            "Central European Standard Time",
+            "India Standard Time",
+            "China Standard Time",
+            "Tokyo Standard Time",
+            "Australia/Sydney"
         };
         
-        Debug.Log("Initialize with default time zones from code to see them in inspector");
+        Debug.Log("Initialize with default time zones from code");
     }
     
-    // Public method to add a custom time zone
     public void AddTimeZone(string timeZoneName, string timeZoneId, TextMeshProUGUI timeText, TextMeshProUGUI dateText = null)
     {
         TimeZoneDisplay newTz = new TimeZoneDisplay
@@ -117,7 +116,6 @@ public class TimeZoneClockManager : MonoBehaviour
         timeZones.Add(newTz);
     }
     
-    // Remove a time zone display
     public void RemoveTimeZone(int index)
     {
         if (index >= 0 && index < timeZones.Count)
@@ -126,7 +124,6 @@ public class TimeZoneClockManager : MonoBehaviour
         }
     }
     
-    // Get all available time zones
     public static string[] GetAvailableTimeZones()
     {
         TimeZoneInfo[] zones = TimeZoneInfo.GetSystemTimeZones();
